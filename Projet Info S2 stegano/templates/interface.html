@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadelbyte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="container">
+        <h1>Shadelbyte</h1>
+        <div class="buttons">
+            <button id="writeMessage">Écrire un message</button>
+            <button id="readMessage">Lire un message</button>
+        </div>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="audioFile" accept=".mp3,.wav" title="test" required>
+                <textarea id="hiddenMessage" placeholder="Écrivez votre message caché ici..."></textarea>
+                <input type="text" id="caesarKey" placeholder="Clé de cryptage César (optionnel)">
+                <button id="send" type="submit">Générer</button>
+            </form>
+            <a id="downloadLink" style="display: none;" href="#" download>Télécharger le fichier</a>
+        
+    </div>
+    <div id="carre"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
